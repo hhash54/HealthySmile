@@ -81,12 +81,11 @@
   }
 
   .headerContainer button {
-    background-color: white;
-    color: #121619;
+    color: blue;
   }
 
   .headerContainer button:hover {
-    background-color: rgb(225, 225, 225);
-    color: #121619;
+    color:color: blue;
+    
   }
 }
