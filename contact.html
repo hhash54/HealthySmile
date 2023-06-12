@@ -5,15 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointment Booking</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Add custom CSS for the background image and the logo -->
   <style>
-    .nav-link{
-      font: black;
-    }
     body {
       background: url('/dental.jpg') no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -22,47 +17,48 @@
       background-size: cover;
     }
 
-    
-   
     .navbar-brand {
       font-size: 24px;
       font-weight: bold;
       font-family: 'Arial', sans-serif;
       text-transform: uppercase;
     }
+
     .fa-tooth {
       font-size: 50px;
     }
-   
-  
+
     .form-control {
-      background-color: rgba(255, 182, 193, 0.5); /* LightPink background with 50% opacity */
+      background-color: rgba(255, 182, 193, 0.5);
       border: none;
-      border-bottom: 2px solid #FF69B4; /* HotPink border */
+      border-bottom: 2px solid #FF69B4;
       border-radius: 0;
     }
+
     .form-control::placeholder {
-      color: #FF69B4; /* HotPink placeholder text */
+      color: #FF69B4;
     }
+
     .form-control:focus {
       box-shadow: none;
-      border-color: #FF1493; /* DeepPink border on focus */
+      border-color: #FF1493;
     }
+
     .btn-primary {
-      background-color: #FF69B4; /* HotPink button */
-      border-color: #FF69B4; /* HotPink button border */
+      background-color: #FF69B4;
+      border-color: #FF69B4;
     }
-    .btn-primary:hover, .btn-primary:focus {
-      background-color: #FF1493; /* DeepPink button on hover/focus */
-      border-color: #FF1493; /* DeepPink button border on hover/focus */
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #FF1493;
+      border-color: #FF1493;
     }
   </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <!-- rest of your HTML code -->
-
     <div class="container-fluid">
       <a class="navbar-brand" href="/index.html">
         <i class="fas fa-tooth"></i> Healthy Smile
@@ -71,7 +67,7 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div1 class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/index.html">Home</a>
@@ -86,7 +82,7 @@
             <a class="nav-link" href="/contact.html">Contact</a>
           </li>
         </ul>
-      </div1>
+      </div>
     </div>
   </nav>
 
@@ -113,6 +109,10 @@
                 <input type="date" class="form-control" id="date" placeholder="Preferred Date" required>
               </div>
               <div class="form-group">
+                <label for="time">Preferred Time:</label>
+                <input type="time" class="form-control" id="time" required>
+              </div>
+              <div class="form-group">
                 <select class="form-control" id="services" onchange="displayInputField()" required>
                   <option value="" disabled selected>Select Services</option>
                   <option value="Cleaning">Cleaning</option>
@@ -133,10 +133,9 @@
     </div>
   </div>
 
-  <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
     function displayInputField() {
@@ -151,7 +150,7 @@
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
-      
+
       var services = document.getElementById('services').value == 'other' ? document.getElementById('otherService').value : document.getElementById('services').value;
 
       var formDetails = {
@@ -160,10 +159,11 @@
         phone: document.getElementById('phone').value,
         age: document.getElementById('age').value,
         date: document.getElementById('date').value,
+        time:document.getElementById('time').value,
         services: services,
         message: document.getElementById('message').value
       };
-      
+
       localStorage.setItem('formDetails', JSON.stringify(formDetails));
       window.location.href = 'confirmation.html';
     });
@@ -171,4 +171,3 @@
 
 </body>
 </html>
-

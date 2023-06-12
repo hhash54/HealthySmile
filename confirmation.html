@@ -4,7 +4,6 @@
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <style>
-    /* Add your custom styles here */
     .confirmation {
       background-image: url('/dentalBG.jpg');
       background-size: 100%;
@@ -35,6 +34,8 @@
               <p class="mb-2 text-muted"><strong>Phone Number:</strong> <span id="phoneNumber"></span></p>
               <p class="mb-2 text-muted"><strong>Age:</strong> <span id="age"></span></p>
               <p class="mb-2 text-muted"><strong>Preferred Date:</strong> <span id="date"></span></p>
+              <p class="mb-2 text-muted"><strong>Preferred Time:</strong> <span id="time"></span></p>
+
               <p class="mb-2 text-muted"><strong>Selected Services:</strong> <span id="services"></span></p>
               <p class="mb-4 text-muted"><strong>Additional Information:</strong> <span id="message"></span></p>
               <hr>
@@ -56,12 +57,13 @@
       document.getElementById('phoneNumber').innerText = formDetails.phone;
       document.getElementById('age').innerText = formDetails.age;
       document.getElementById('date').innerText = formDetails.date;
+      document.getElementById('time').innerText = formDetails.time;
+
       document.getElementById('services').innerText = formDetails.services;
       document.getElementById('message').innerText = formDetails.message;
     }
   
     function returnHome() {
-      // Redirect to home.html
       window.location.href = '/index.html';
     }
   </script>
